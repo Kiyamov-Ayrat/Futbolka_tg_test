@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport">
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compartible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop</title>
     <style>
-        @import url('https://fonts.googleapis.com/ccs2?familiy=Montserrat:wght@200;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 
         * {
             margin: 0;
@@ -16,10 +15,10 @@
         }
 
         body {
-            font-familiy: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
-            backround: var(--tg-theme-bg-color);
+            background: var(--tg-theme-bg-color);
         }
 
         #main {
@@ -32,11 +31,11 @@
             margin-top: 50px;
             margin-bottom: 10px;
         }
+
         img {
             width: 70px;
             margin: 30px auto;
         }
-
 
         p {
             width: 350px;
@@ -61,7 +60,7 @@
 
         #form {
             display: none;
-            text-aling: center;
+            text-align: center;
         }
 
         input {
@@ -88,10 +87,10 @@
         <button id="buy">Buy</button>
     </div>
     <form id="form">
-          <input type="text" placeholder="Name" id="user_name">
-          <input type="text" placeholder="Email" id="user_email">
-          <input type="text" placeholder="Phone number" id="user_phone">
-          <button id="order">Confirm</button>
+        <input type="text" placeholder="Name" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Phone number" id="user_phone">
+        <button id="order">Confirm</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -99,16 +98,19 @@
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
 
-        buy.addEvenListener("click", () => {
+        buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
-            document.getElementById("main").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.last_name;
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
 
         order.addEventListener("click", () => {
             tg.close();
         });
-        
+
+    </script>
+</body>
+</html>
     </script>
 </body>
 </html>
